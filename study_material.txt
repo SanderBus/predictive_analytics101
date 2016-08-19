@@ -1,0 +1,23 @@
+Books
+
+Predictive Analytics: The power to predict who will click, buy, lie and die
+Eric Siegel -- 2013/2016
+
+Book which introduces you to the general ideas behind predictive analytics
+
+Progress: Read chapters 1-4 (17-18 aug)
+
+
+
+
+
+Web tutorials:
+A complete tutorial to learn data science in R from scratch
+Analytics Vidhya
+https://www.analyticsvidhya.com/blog/2016/02/complete-tutorial-learn-data-science-scratch/
+
+How to do predictive analytics hands on. Starting from how to use R to how to prepare a table for PA
+and from machine learning basics to the more complex techniques.
+
+Progress: Read chapters 1-4 (19 aug) + prepared the training dataset for the machine learning step
+(see r_datasciencetutorialfromscratch.R)
