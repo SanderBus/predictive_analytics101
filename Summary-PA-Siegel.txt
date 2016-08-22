@@ -1,0 +1,225 @@
+Predictive Analytics: The power to predict who will click, buy, lie or die
+Eric Siegel & Thomas Davenport
+
+
+Introduction & Chapter 1: The prediction effect
+
+The prediction effect: even  a  it better than a pure guess goes a long way
+
+Bussiness intelligence or predictive analytics is about what is hidden in the data. 
+
+Forecast: how many icecreams will be sold in Groningen in the summer (global)
+Prediction: which individuals are more likely to buy an icecream
+
+One wants to make data driven decisions. The only source of knowledge is experience.
+
+Process of predictive analytics:
+Data => machine learning => predictive model
+
+Predictive analytics consists of computer science and statistics.
+
+Once a predictive model has been created one can predict what an individual is likely to do:
+Individual characteristics => predictive model => predictive score
+
+Three different data sets can be distinguished:
+ - learning set: for the machine learning algorithm to discover patterns in the data
+ - test set: to test whether the algorithm underlearned or overlearned
+ - real data: for this data the outcome (i.e. what one wants to predict) is not known.
+
+There are multiple ways one can structure a predictive model:
+ - linear model: takes for each characteristic how it influences the predictive score. Combines these outcomes linearly, i.e. does not takes correlations into account, e.g. being a woman increases the predictive score by 10%, living in groningen decreases it by 20%, so predictive score of a woman living in groningen is 1.1*0.8 times the mean predictive score.
+ - Rule model: for each combination of characteristics a rule is made, e.g. a woman in the age group of 25-30 living in Groningen has a 25% chance of owning a house.
+ - Complex optimization models: mathematical models, which are hard to understand for humans, but can provide more accurate results.
+
+Data by itself is useless. Analyzing it and than acting upon the newly gained knowledge is what creates knowledge.
+
+e.g. PA applications: Pregnancy prediction
+1. What is predicted: Which female customers will have a baby in the coming months?
+2. What is done about it: Market relevant offers to soon to be parents of newborns.
+
+So one needs a dataset which contains characteristics of clients and know that they got a baby. This dataset is split into a learn and a test set. Machine learning is applied and one becomes a predictive model. Input the characteritics of current customers to predict whether they will have a baby and then send these people appropriate advertisements. 
+
+The more (reliable) characteristics of an individual are known the better the predictive model will be.
+ 
+
+Chapter 2: With power comes responsibility
+
+Privacy: Each company needs to decide for its data what to save, who can access it, who it is shared with, which data can be combined and how one can respond to the data.
+
+Faulty data provides a faulty predictive model
+
+The predictive score needs to be interpreted correctly. Without knowledge of statistics (i.e. its meaning, limitations, ramifications and confidentiality) one is prone to misinterpret.
+
+A score is a trend or probability, not a certainty for an individual case.
+
+The model will never contain all factors, individual cases will always be difficult.
+
+Machine cannot be held accountably when they make "mistakes" (e.g. Volvo self driving cars)
+
+PA will have prejudices against minorities, e.g. profiling. Prejudice is a self fullfilling proficy, PA could make it even worse (although one could remove biases from the predictive model, it is harder to remove biases from human beings)
+
+
+Chapter 3: The data effect
+
+In constructing a predictive model one does not try to understand one tries to find patterns.
+
+PA gives excisting data a new purpose.
+
+Data is an abstraction of reality.
+
+Data can be useful because everything is connected. Patterns in certain characteristics can (although they don't have to) provide predictions on seemingly unrelated topics: machine learning will find these patterns: what will be discoved is unknown, that something will be discovered is certain.
+
+The data effect: Data is alway predictive
+
+predictor variable: a single value measured for each individual which can be used to indicate the likelihood of a certain event, e.g. regency (how long ago was the last event) and frequency.
+
+PA builds its strength by combining many predictors.
+
+Principle behind PA: Past behavior predicts future behavior and past events predict future events.
+
+Correlation does not imply causation! Two correlated effects might have the same cause.
+
+PA predicts, it does not explain.
+
+People tend to invent causal connections.
+
+PA makes serendipitous discoveries easier. It's a broad net it casts: it's a broad exploratory analysis. 
+One needs to be carefull that some of the patterns it finds are accidental! Noise!
+
+
+Chapter 4: The machine that learns
+
+Each cog in the machinery of a company should make the best possible decisions, e.g. for each mortgage in a bank's portfolio it should be decided what to do with it.
+
+If your predictions are faulty, you have a big problem: the future does not behave as the past did
+
+Insurance companies are in the business of prediction: actuarism
+
+If you know the chances of "failure" you can anticipate on them (e.g. if you expect 5 problems to occur per day, this is not problematic, since you anticipated them)
+
+Essence 1 of machine learning: differentiate individuals into groups of different succes rates and check which characteristics correlate
+
+Essence 2 of machine learning: go multivariate
+
+Goal of machine learning: program computer such that it crunches data and spits out a multivariate predictive model
+
+The learning set must be good, i.e. representative of future data.
+
+The goal is to split your group set into more and more differentiated groups to improve predictive power, but do not go too far! [This is the popular desicion tree method]
+
+Overlearning/overfitting is a pitfall, if too many characteristics are available you find noise correlating with what you are interested in. In the extreme case, every individual in the learning set has one leave in the decision tree.
+
+Induction: Reasoning from details to a general truth = reverse engineering = hard. One needs to make assumptions (this is the art of PA), one introduces a bias.
+Deduction: Vice versa, relatively straight forward.
+
+Step 1: data preperation -- learning and training data
+Step 2: Establish foundational assumptions (which assumptions you make depends on your data: you find out by experience and data inspection)
+
+Most learning methods search for a good predictive model incrementally (e.g. artificia neural networks, loglinear regression, support vector machines and TreeNet).
+
+How long should you keep learning: there is no fundamental mathematical answer to this. The method used is to compare the learning set to the test set. 
+
+Lift: improvement factor. The lift should be approximatly the same in the training and test set. It should also be as high as possible. The lift will keep growing in the training and test set as you make your model more extensive. At the point where you start overlearning the test lift will flatten out or go down, while the training lift keeps rising. This should be a red flag to you!
+
+"Everything should be made as simple as possible, but not simpler!" ~Einstein
+Occam's razor
+KISS: Keep it simple stupid
+
+General method of preventing overlearning: let the tree grow as big as it can, record all intermediate states and find the best state compared to the test set.
+
+Leading decision tree standard: CART (classification & regression trees)
+
+Induction effect: Art drives machine learning: when followed by computer programs, strategies designed by human beings creativity succeed in developing predictive models that perform well on new cases.
+
+
+Chapter 5: The Ensemble Effect -- PA by Siegel
+
+Ensemble modeling: combine multiple PA models, such that their strenghts and weaknesses are combined, yielding a better results than just a single method. Just like the average of a human guess comes often close to the true answer (S: It cancels out random errors, but not systematic errors which occur in the entier population (of humans or PA models).
+
+Engineering: assembling components into a more complex and powerfull structure.
+
+Random forest: method of combining PA models by having them vote ??
+
+A PA method should be stable under small variations in the learning data. Ensembles are structurely more complex than single models, but are more robust against overlearning. (compare to "weerstanden in serie" 1/Rtot = 1/R1 + ... ??) p. 149
+
+The ensemble effect: When joined in an ensemble, predictive models compensate for one another's limitations, so the ensemble as a whole is more likely to predict correctly than its component models are.
+
+
+Chapter 6: Watson and the Jeopardy! Challenge
+
+PA: predict future events
+PA: predict the correctness of an answer/solution (imperfectly infer an unknown)
+
+A computer does not need to use the same kind of methods as a human being to come to the same answer
+
+
+Chapter 7: Persuasion by Numbers
+
+Marketing: Churn modeling (chance a customer leaves) + Respone modeling (which customers buy after being contacted)
+Things are more subtle: one should not awake sleeping dogs (potential leavers) and make sure you don't try to persuade people who are already persuaded (Waste marketing money)
+
+Try to answer the correct questions! Better is: What is the chance that the customer can be convinced to buy the product.
+Problem: how to make a learning set? As you don't have reference material... Influence can not be measured. How to predict it? Have randomly selected groups and test! (control group)
+
+Quantum question:
+1. Will Bill buy X when send a brochure
+2. Will Bill buy X when not send a brochure
+It is impossible to know both.
+
+Solution: Uplift model: How much more likely is this treatment to generate the desired outcome than the alternative treatment. There are two trainingsets (control and treated) which give an uplifted model. Apply this model to individuals characteristics and you will find out whether it is better to do nothing or to contact the customer.
+
+Wrong question: Will the customer buy if contacted
+Right question: Will the customer buy only if contacted
+
+Extending the uplift modeling to multiple characteristics you get uplift trees.
+
+The persuasion effect: Although imperceivable, the persuasion of an individual can be predicted by uplift modeling, predictively modeling across two distinct training data sets that record, respectively, the outcomes of two competing treatments.
+
+
+
+BI examples:
+
+Mortages
+Say the average default rate of mortgages at a bank is 10%.
+1. split into two groups: high risk of 17% and low risk of 3%.
+2. Find predictors with which one can identify whether an individual belongs to the low or the high risk group & with which certainty.
+
+SPAM:
+A company seds out 1.000.000 emails and 1% of its recipiants buy their product.
+
+profit = 220 * number of sales - 2 * number of emails   = 200.000
+
+One should identify a subset of people more likely to buy.
+
+Say now succesrate of 3% in group of 250.000 people. (i.e. you miss 2500 buys, but have 750.000 emails less to send)
+
+new_profit = 1.150.000!!!
+
+
+Useful resources:
+
+Leading foundational textbooks for practitioners of predictive modeling (technical): 
+ - Robert Nisbet, John Elder, and Gary Miner, Handbook of Statistical Analysis and Data Mining Applications (Academic Press, 2009). 
+ - Tom M. Mitchell, Machine Learning (McGraw-Hill Science/Engineering/Math, 1997).
+ - Trevor Hastie, Robert Tibshirani, and Jerome Friedman, The Elements of Statistical Learning: Data Mining, Inference, and Prediction , 2nd ed., corr. 3rd printing, 5th printing (Springer, 2009).
+
+Training options for business users and prospective practitioners of predictive analytics: 
+ - Online e-course: Predictive Analytics Applied . Instructor: Eric Siegel. Available on demand at any time. www.predictionimpact.com/predictive-analytics-online-training.html. 
+ - Complete list of degree programs in analytics, data mining, and data science: www .kdnuggets.com/education.
+
+
+Useful:
+ - API
+ - R
+ - kdnuggets.com
+ - data.gov
+ - coursera machine learning
+
+ - Bayes network: Granger predictive relationship test
+
+
+
+
+
+
+
